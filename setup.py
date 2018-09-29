@@ -2,16 +2,23 @@
 from __future__ import unicode_literals
 
 from setuptools import setup
+from os import path
+
+# Read contents of the readme file
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
 
 setup(
     name="katex",
-    version="attr: katex.__version__",
+    version="0.0.1", # Remember to update this in katex/__init__.py as well
     license="BSD 3-Clause",
     license_file="LICENSE",
     author="Mads Marquart",
     author_email="madsmtm@gmail.com",
     description="Convert an image into KaTeX to use in Facebook Messenger",
-    long_description="file: readme.md",
+    long_description=long_description,
     long_description_content_type="text/markdown",
     keywords="Facebook KaTeX Messenger ",
     classifiers=[
@@ -37,7 +44,6 @@ setup(
         "Topic :: Utilities",
     ],
     url="http://github.com/madsmtm/katex",
-    zip_safe=True,
     packages=["katex"],
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4.0",
     install_requires=["Pillow>=5.2.0", "attrs", "parse", "Click"],
