@@ -14,6 +14,7 @@ class ImageToKatex(object):
     max_length = attr.ib(type=int)
     fontsize = attr.ib(type=float)
     precision = attr.ib(5, type=float)
+    transparency = attr.ib(True, type=bool)
     _pixelsize = attr.ib(None, type=float)
     _katex_multiplier = attr.ib(1.21, type=float)
     _unit_multiplier = attr.ib(0.1, type=float)
@@ -39,6 +40,8 @@ class ImageToKatex(object):
 
     def in_background(self, color):
         # TODO: Make this work for colors close to the background color
+        if not self.transparency:
+            return False
         return color == self.background
 
     def get_float_value(self, number):

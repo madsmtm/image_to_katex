@@ -75,21 +75,27 @@ ColorType = ColorTypeBase()
     type=int,
     help="How precise the pixel-sizes should be. Can reduce output size",
 )
+@click.option(
+    "--transparency/--no-transparency",
+    default=True,
+    help="Whether to make possible parts of the image transparent",
+    show_default=True,
+)
 @click.pass_context
-def cli(ctx, type_, image, size, resample=None, **kwargs):
+def image_to_katex(ctx, type_, image, size, resample=None, **kwargs):
     """Convert an image into KaTeX using \\rule"""
     kwargs = dict(filter(lambda item: item[1] is not None, kwargs.items()))
-    image_to_katex = CLASSES[type_](**kwargs)
+    class_ = CLASSES[type_](**kwargs)
 
     if False:
-        katex, size = image_to_katex.get_largest_latex(
+        katex, size = class_.get_largest_latex(
             image, args.pixelsize, args.fontsize, args.precision, args.resample
         )
     else:
-        katex = image_to_katex.get_katex(image, size, resample=resample)
+        katex = class_.get_katex(image, size, resample=resample)
 
-    length = "{}/{}".format(len(katex), image_to_katex.max_length)
-    if len(katex) > image_to_katex.max_length:
+    length = "{}/{}".format(len(katex), class_.max_length)
+    if len(katex) > class_.max_length:
         ctx.fail("Length of resulting string too large: {}".format(length))
 
     click.echo(katex)
