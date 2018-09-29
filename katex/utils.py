@@ -6,7 +6,7 @@ from colour import Color
 
 
 def color_to_int(color):
-    return tuple(round(x * 255) for x in color.get_rgb())
+    return tuple(int(round(x * 255)) for x in color.get_rgb())
 
 
 def color_from_int(ints):
@@ -27,8 +27,8 @@ def resize_image(image, size, resample=None):
 
     # Preserve aspect ratio
     ratio = min(size / image.width, size / image.height)
-    height = round(image.height * ratio)
-    width = round(image.width * ratio)
+    height = int(round(image.height * ratio))
+    width = int(round(image.width * ratio))
 
     return image.resize((height, width), resample=resample)
 

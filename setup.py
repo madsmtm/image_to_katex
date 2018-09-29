@@ -12,7 +12,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="katex",
-    version="0.0.1", # Remember to update this in katex/__init__.py as well
+    version="0.0.2", # Remember to update this in katex/__init__.py as well
     license="BSD 3-Clause",
     license_file="LICENSE",
     author="Mads Marquart",
@@ -31,10 +31,10 @@ setup(
         "Operating System :: OS Independent",
         "Natural Language :: English",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Communications :: Chat",
@@ -45,7 +45,7 @@ setup(
     ],
     url="http://github.com/madsmtm/katex",
     packages=["katex"],
-    python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4.0",
-    install_requires=["Pillow>=5.2.0", "attrs", "parse", "Click"],
+    python_requires=">=3.4, <4.0",
+    install_requires=["Pillow>=5.2.0", "attrs", "Click", "colour"],
     entry_points={"console_scripts": ["image_to_katex=katex.cli:image_to_katex"]},
 )
