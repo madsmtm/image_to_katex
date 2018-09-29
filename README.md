@@ -9,20 +9,20 @@ More functionality is planned, and PRs welcome!
 # Installation
 
 ```sh
-    $ # This will install the python package `katex`, along with the shell command `image_to_katex`
-    $ pip install katex
+$ # This will install the python package `katex`, along with the shell command `image_to_katex`
+$ pip install katex
 ```
 
 # Basic usage
 
 ```sh
-    $ # This will generate KaTeX output for that image, where the image is scaled down to 16 pixels
-    $ image_to_katex image.png 16
+$ # This will generate KaTeX output for that image, where the image is scaled down to 16 pixels
+$ image_to_katex image.png 16
 ```
 
 ```sh
-    $ # Display help message
-    $ image_to_katex --help
+$ # Display help message
+$ image_to_katex --help
 ```
 
 # Facebook KaTeX info
@@ -32,7 +32,7 @@ Max length of Facebook messages is 20000 chars.
 
 Facebook renders any KaTeX error messages in the html `title` attribute.
 
-You can use `$$` or `\(`/`\)` as delimeters. `$$` renders the LaTeX in displayMode, `\(`/`\)` renders it inline.
+You can use `$$` or `\(`+`\)` as delimeters. `$$` renders the LaTeX in displayMode, `\(`+`\)` renders it inline.
 
 Facebook wraps all inputs in a `\color` block, like this: `\color{#fff}{inp}`, where `inp` is the input
 
