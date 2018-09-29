@@ -9,15 +9,17 @@ More functionality is planned, and PRs welcome!
 # Installation
 
 ```sh
-$ # This will install the python package `katex`, along with the shell command `image_to_katex`
+$ # This will install the python package `katex`, along with the shell command
+$ # `image_to_katex`
 $ pip install katex
 ```
 
 # Basic usage
 
 ```sh
-$ # This will generate KaTeX output for that image, where the image is scaled down to 16 pixels
-$ image_to_katex image.png 16
+$ # This will generate KaTeX output for that image, where the image is scaled
+$ # down to 30 pixels, and where each pixel is 5 units wide
+$ image_to_katex image.png -s 30 -ps 5
 ```
 
 ```sh
