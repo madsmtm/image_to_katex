@@ -12,7 +12,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="katex",
-    version="0.0.3", # Remember to update this in katex/__init__.py as well
+    version="0.0.4", # Remember to update this in katex/__init__.py as well
     license="BSD 3-Clause",
     license_file="LICENSE",
     author="Mads Marquart",
