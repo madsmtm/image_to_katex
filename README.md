@@ -28,19 +28,18 @@ $ image_to_katex --help
 ```
 
 # Facebook KaTeX info
-KaTeX version: v0.8.2 (17/8-2017)
+Custom KaTeX version, above v0.8.2 (17/8-2017) but below v0.9.0. At least commit [211c86d](https://github.com/KaTeX/KaTeX/commit/211c86d39bcdc421149628f7b266891138cbdb1a).
 
-Max length of Facebook messages is 20000 chars.
+Max length of Facebook messages is 20000 chars - though they've added an extra check to not execute KaTeX if the message is above 1000 chars, or the depth level is above 20. Probably parameters they can tune remotely.
 
-Facebook renders any KaTeX error messages in the html `title` attribute.
+Facebook renders any KaTeX error messages in the html `title` attribute (which means you can hover over to view it).
 
-You can use `$$` or `\(`+`\)` as delimeters. `$$` renders the LaTeX in displayMode, `\(`+`\)` renders it inline.
+You can use `$$`, `\(`+`\)` or `\[`+`\]` as delimeters. `$$` or `\[`+`\]` renders the LaTeX in displayMode, `\(`+`\)` renders it inline.
 
 Facebook wraps all inputs in a `\color` block, like this: `\color{#fff}{inp}`, where `inp` is the input
 
-Known KaTeX options:
+Known current KaTeX options:
 
-- displayMode = true if `$$` else false
-- colorIsTextColor: false
-- maxSize: 50
-- maxExpand = 25
+- displayMode = true if using `$$` else false
+- colorIsTextColor: default
+- maxSize: 5
